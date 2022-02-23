@@ -7,7 +7,7 @@ def onClick(event, x, y, flags, param):
     global mousePos
     if event == cv.EVENT_LBUTTONDOWN:
         mousePos = (x, y)
-
+        
 def live():
     capture = cv.VideoCapture(1)
     cv.namedWindow('Color Picker')
@@ -15,6 +15,7 @@ def live():
 
     while True:
         if cv.waitKey(5) & 0xFF == 27:
+            
             break
 
         ret, frame = capture.read()
@@ -61,4 +62,5 @@ def image():
     cv.destroyAllWindows()
 
 if __name__ == "__main__":
+    
     live()
